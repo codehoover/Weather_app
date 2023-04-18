@@ -1,0 +1,61 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+*{
+    font-family: Roboto;
+}
+body{
+    transition: 1s;
+    height: 90vh;  
+}
+
+#form{
+    display: flex;
+    align-items: center;
+}
+.city_input{
+    outline: none;
+    padding-top: 10px;
+    border: none;
+    width: 70%;
+    margin: auto;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.city_input:focus{
+    border-bottom: 2px black solid;
+}
+#main{
+    margin: auto;
+}
+#weather{
+    text-align: center;
+    display: block;
+}
+
+.container{
+    border-radius: 50px;
+    height: 70%;
+    min-height: 300px;
+    width: 40%;
+    min-width: 350px;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+
+
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    background: rgba(255,255,255,.15);
+}
+
+h3{
+    text-transform: capitalize;
+
+}
+
+.weather-image{
+    height: 150px;
+    width: 150px;
+
+}
