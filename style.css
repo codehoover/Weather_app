@@ -1,10 +1,11 @@
-@import url('http://fonts.googleapis.com/css?family=Roboto');
+@import url('http://fonts.googleapis.com/css?family=Poppins');
 *{
-    font-family: Roboto;
+    font-family: Poppins;
 }
 body{
     transition: 1s;
-    height: 90vh;  
+    height: 90vh;
+    background-color: #8d90e2;  
 }
 
 #form{
@@ -19,43 +20,52 @@ body{
     margin: auto;
     background-color: transparent;
     font-size: 20px;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-weight: 100;
+    color: white;
+}
+::placeholder{
+    color: white;
 }
 .city_input:focus{
-    border-bottom: 2px black solid;
+    border-bottom: 2px rgb(255, 255, 255) solid;
 }
 #main{
     margin: auto;
 }
 #weather{
     text-align: center;
-    display: block;
 }
 
 .container{
     border-radius: 50px;
-    height: 70%;
-    min-height: 300px;
+    height: 100px;
+    /* min-height: 200px; */
     width: 40%;
     min-width: 350px;
     display: block;
     margin: auto;
     padding-top: 20px;
+    transition: 1s ease-out;
 
 
     backdrop-filter: blur(5px);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
-    background: rgba(255,255,255,.15);
 }
 
 h3{
     text-transform: capitalize;
-
 }
 
 .weather-image{
     height: 150px;
     width: 150px;
+    transition: 1s ease-in;
+}
 
+#description{
+    font-weight: 100;
+}
+#feels_like{
+    font-weight: 100;
+    color: white;
 }

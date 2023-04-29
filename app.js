@@ -18,18 +18,17 @@ async function getWeatherByLocation(city){
 
  function addWeatherToPage(data){
      const temp = Ktoc(data.main.temp);
+     const feels_like = Ktoc(data.main.feels_like)
 
      const weather = document.createElement('div')
      weather.classList.add('weather');
 
      weather.innerHTML = `
 
-     <img class="weather-image" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
-     <h2> ${temp}<sup>°C</sup> </h2>
-     <h4> ${data.humidity}</h4>
-     <h3> ${data.weather[0].description}</h3>
-
-
+        <img class="weather-image" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+        <h2 id="temperature"> ${temp}<sup>°C</sup> </h2>
+        <h4 id="feels_like"> feels like ${feels_like}<sup>°C</sup></h4>
+        <h3 id="description"> ${data.weather[0].description}</h3>
      
      `;
 
@@ -37,19 +36,18 @@ async function getWeatherByLocation(city){
    //   cleanup 
      main.innerHTML= "";
       main.appendChild(weather);
+
+    if(temp >= 0){
+        document.getElementById("temperature").style.color="#ffe135";
+    };
+    document.getElementById("description").style.color="white";
+    document.getElementById("container").style.height="70%";
     
-    if (data.weather[0].main == "Clouds"){
-        document.body.style.backgroundColor = 'grey'
-    }
-    else if (data.weather[0].main =="Clear"){
-        document.body.style.backgroundColor = 'aliceblue'
-    }
-    else{
-        document.body.style.backgroundColor = "white"
-    }
+    
+
  };
 
-
+// converting kelvin to celcius 
 function Ktoc(K){
     return Math.floor(K - 273.15);
 }
